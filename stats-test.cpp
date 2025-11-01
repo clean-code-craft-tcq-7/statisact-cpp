@@ -4,11 +4,11 @@
 #include <cmath>
 
 TEST(Statistics, ReportsAverageMinMax) {
-    auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
+    auto computedStats = Statistics::ComputeStatistics({98.6, 98.2, 97.8, 102.2});
     float epsilon = 0.001;
-    EXPECT_LT(std::abs(computedStats.average - 4.525), epsilon);
-    EXPECT_LT(std::abs(computedStats.max - 8.9), epsilon);
-    EXPECT_LT(std::abs(computedStats.min - 1.5), epsilon);
+    EXPECT_LT(std::abs(computedStats.average - 99.2), epsilon);
+    EXPECT_LT(std::abs(computedStats.max - 102.2), epsilon);
+    EXPECT_LT(std::abs(computedStats.min - 97.8), epsilon);
 }
 
 TEST(Statistics, AverageNaNForEmpty) {
